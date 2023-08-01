@@ -13,21 +13,12 @@ Refer to result.png to see final result.
 
    - The name field should be required and the email valid (use builtin browser validation )
 
-   <!-- value // onChange // setState -->
-
 - Clicking each label should focus the respective input field
-
-<!--  <label htmlFor="email"> & <input id: "email"> -->
 
 3. On submit add the resulting user to an array called profileData
    reset the form
 
-   <!-- e.preventDefault() // setArray(prev => ([...prev, blabla]) // Clear the useStates
-    -->
-
 4. List all created users beneath the form.
-
-<!-- new component, map the array, need to lift the state to parent to share information between components -->
 
 5. Clicking a user should POST an JSON object with the user's name and email to 'https://jsonplaceholder.typicode.com/posts'.
    - add the ID from the response to the user list

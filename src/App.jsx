@@ -26,7 +26,7 @@ export default function App() {
     <div className="container">
       <div>
         <Signup onSubmit={handleSubmit} />
-        <Users users={profileData} updateUser={handleUpdateUser} />
+        <Users users={profileData} handleUpdateUser={handleUpdateUser} />
       </div>
     </div>
   );
@@ -75,7 +75,7 @@ function Signup({ onSubmit }) {
 }
 
 // eslint-disable-next-line react/prop-types
-function Users({ users, updateUser }) {
+function Users({ users, handleUpdateUser }) {
   const fetchPost = (item) => {
     fetch("https://jsonplaceholder.typicode.com/posts", {
       method: "POST",
@@ -86,7 +86,7 @@ function Users({ users, updateUser }) {
       body: JSON.stringify({ name: item.name, email: item.email }), // body data type must match "Content-Type" header
     })
       .then((res) => res.json())
-      .then((data) => updateUser(data, item.id));
+      .then((data) => handleUpdateUser(data, item.id));
   };
 
   return (
